@@ -1,0 +1,23 @@
+<ion-content padding id="onboarding">
+  <ion-slide pager (ionSlideDidChange)="slideChange()">
+    <ion-slide>
+      <div class="diag" color="bg-homecolor">
+        <ion-icon ios="ios-trophy" md="md-trophy" color="primary"></ion-icon>
+      </div>
+      <div>
+        <h2>3.1 Onboarding</h2>
+        <p>this is onboarding page.</p>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      3.2
+    </ion-slide>
+    <ion-slide>
+      3.3
+    </ion-slide>
+    <ion-slide>
+      3.4
+    </ion-slide>
+  </ion-slide>
+  <button (click)="skip()" id="skip">Next</button>
+</ion-content>
