@@ -1,6 +1,50 @@
-<ion-content padding>
-  <h1>Homilestics Page</h1>
-  <ion-list>
-    <button ion-button block menuToggle color="bg-homecolor" (click)="menu()">Menu</button>
-  </ion-list>
+
+
+<ion-content padding id="home">
+    <div padding>
+        <ion-segment [(ngModel)]="segmentbook" id="segmentbook">
+            <ion-segment-button value="enttirebibles">
+                <h6>ENTIRE BIBLES</h6>
+            </ion-segment-button>
+            <ion-segment-button value="oldtestament">
+                <h6>OLD TESTAMENT</h6>
+            </ion-segment-button>
+            <ion-segment-button value="newtestament">
+              <h6>NEW TESTAMENT</h6>
+            </ion-segment-button>
+        </ion-segment>
+      </div>
+  
+    <div id="entire-bible">
+      <div style="display : block;">
+        <canvas baseChart
+        width="2"
+        height="1"
+            [chartType]="barChartType"
+            [datasets]="barChartDataSet"
+            [labels]="barChartLabels"
+            [legend]="barChartLegend"
+            [options]="barChartOptions"
+            [colors]="barChartColors"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)">
+        </canvas>
+      </div>
+    </div>
+    <ion-grid>
+      <ion-row>
+        <ion-item-group>
+          <ion-item-divider color="light">Acts of the Apostles</ion-item-divider>
+          <ion-item>Jesus Taken Up Into Heaven</ion-item>
+          <ion-item>The Holy Spirit Comes at Pentecost</ion-item>
+          <ion-item>Peter Heals a Lame Beggar</ion-item>
+        </ion-item-group>
+      </ion-row>
+      <ion-row>
+          <ion-col col-1></ion-col>
+          <ion-col center text-center col-10>
+          <button ion-button round color="bg-homecolor" (click)="menu()">Add Study</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 </ion-content>

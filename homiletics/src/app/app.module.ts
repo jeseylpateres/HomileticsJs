@@ -1,6 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+
 import { MyApp } from './app.component';
 
 // Basic Pages
@@ -21,7 +22,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SignaturePadModule } from 'angular2-signaturepad';
-//import { HttpModule } from '@angular/http';
+import { ChartsModule } from 'ng2-charts';
+
+// Provider
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
 @NgModule({
@@ -40,7 +43,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
   ],
   imports: [
     BrowserModule,
-    // HttpModule,
+    ChartsModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
