@@ -9,6 +9,12 @@ import { MenuPage } from '../menu/menu';
 })
 export class HomePage {
 
+  segmentbook1 : string = "entirebible";
+  completeStudies:number= 0;
+  ongoingStudies:number= 0;
+  quizes: number=0;
+
+
   constructor(public navCtrl: NavController, public app: App) {
   }
 
@@ -17,21 +23,21 @@ export class HomePage {
   }
 
 
-  // Bar Chart : Start ===============================================
-  public barChartType:string = 'bar';
-  public barChartLegend:boolean = false;
+  // ENTIRE TESTAMENT : Start ===============================================
+  public ebBarChartType:string = 'bar';
+  public ebBarChartLegend:boolean = false;
 
-  public barChartColors:any[] = [
+  public ebBarChartColors:any[] = [
     {
       backgroundColor: 'rgba(61, 163, 108, 1)',
       borderColor: 'rgba(61, 163, 108, 1)'
     }
   ];
 
-  public barChartOptions:any = {
+  public ebBarChartOptions:any = {
     scaleShowVerticalLines: false,    
-    responsive: true,
-    maintainAspectRatio: true,
+    responsive: false,
+    //maintainAspectRatio: true,
     title:{
       display : false,
       text: 'ENTIRE BIBLE'
@@ -46,7 +52,7 @@ export class HomePage {
     }
   };
 
-  public barChartDataSet:any[] = [
+  public ebBarChartDataSet:any[] = [
     {
       label: 'Complete Study',
       data: [20, 40, 0, 10, 0, 0, 25, 0, 0, 0, 0, 0]
@@ -56,7 +62,7 @@ export class HomePage {
       data: [50, 40, 27, 36, 34, 24, 21, 4, 31, 24, 22, 25, 29,36,10,13,10]
     }
   ];
-  public barChartLabels:string[] = [
+  public ebBarChartLabels:string[] = [
     'GEN', 
     'EXO', 
     'LEV', 
@@ -85,6 +91,7 @@ export class HomePage {
       console.log("Bar #: " + x._index);
       console.log(x._model.datasetLabel);
       console.log(x._model.label);
+      this.completeStudies = x._index;
     }
   }
 
@@ -98,14 +105,66 @@ export class HomePage {
       Math.round((Math.random() * 100)%50),//GEN
       40,//EXO
       0,//LEV
-      ((Math.random() * 100) %36),//NUM
+      Math.round((Math.random() * 100) %36),//NUM
       0,//DEU
-      ((Math.random() * 100)%24),//JOSH
+      Math.round((Math.random() * 100)%24),//JOSH
       25];//JUDG
-    let clone = JSON.parse(JSON.stringify(this.barChartDataSet));
+    let clone = JSON.parse(JSON.stringify(this.ebBarChartDataSet));
     clone[0].data = data;
-    this.barChartDataSet = clone;
+    this.ebBarChartDataSet = clone;
   }
-  // Bar Chart : END ===============================================
+  // ENTIRE TESTAMENT : END ===============================================
+
+
+  // OLD TESTAMENT : START ================================================
+  public obBarChartOptions:any = {
+    scaleShowVerticalLines: false,    
+    responsive: false,
+    //maintainAspectRatio: true,
+    title:{
+      display : false,
+      text: 'OLD TESTAMENT'
+    },
+    scales:{
+      xAxes:[{
+          stacked:true
+      }],
+      yAxes:[{
+          stacked:false
+      }]
+    }
+  };
+
+  public obBarChartDataSet:any[] = [
+    {
+      label: 'Complete Study',
+      data: [20, 40, 0, 10, 0, 0, 25, 0, 0, 0, 0, 0]
+    },
+    {
+      label: 'Total Chapter',
+      data: [50, 40, 27, 36, 34, 24, 21, 4, 31, 24, 22, 25, 29,36,10,13,10]
+    }
+  ];
+  public obBarChartLabels:string[] = [
+    'GEN', 
+    'EXO', 
+    'LEV', 
+    'NUM', 
+    'DEU', 
+    'JOSH', 
+    'JUDG',
+    'RUTH',
+    '1 SAM',
+    '2 SAM',
+    '1 KIN',
+    '2 KIN',
+    '1 CHR',
+    '2 CHR',
+    'EZRA',
+    'NEHE',
+    'ESTH',
+  ];
+  // OLD TESTAMENT : END ================================================
+
 
 }
