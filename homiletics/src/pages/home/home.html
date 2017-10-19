@@ -23,7 +23,7 @@
                   <div>QUIZES (Coming Soon)</div>
                 </ion-col>
             </ion-row>
-        </div><!-- (END) TABLE HEADER -->
+        </div><!-- (eEND) TABLE HEADER -->
     </ion-grid>
 
 
@@ -47,15 +47,15 @@
       <ion-list *ngSwitchCase="'entirebible'">
           <div class="chart-content">
             <div class="canvas-content">
-              <canvas baseChart width="950" height="200%"
+              <canvas baseChart width="3500" height="200%"
                   [chartType]="ebBarChartType"
                   [datasets]="ebBarChartDataSet"
                   [labels]="ebBarChartLabels"
                   [legend]="ebBarChartLegend"
                   [options]="ebBarChartOptions"
                   [colors]="ebBarChartColors"
-                  (chartHover)="chartHovered($event)"
-                  (chartClick)="chartClicked($event)">
+                  (chartHover)="chartHoveredForEB($event)"
+                  (chartClick)="chartClickedForEB($event)">
               </canvas>
             </div>
           </div>
@@ -65,9 +65,9 @@
         <!-- GROUP C : book content, table list -->
         <div id="entirebook-col1-row3">
           <div class="table-study-header-list" padding>
-            <div class="bible-testament">NEW TESTAMENT</div>
-            <div class="bible-title"><strong>The First Book of Moses Called Genesis</strong></div>
-            <div class="div-study-status-detail">50 Studies * 4 Completed (25%)</div>
+            <div class="bible-testament">BOOK OF TESTAMENT</div>
+            <div class="bible-title"><strong>{{ bibleTitleBook }}</strong></div>
+            <div class="div-study-status-detail">{{ totalStudies }} Studies * {{ completeStudies }} Completed ({{ percentageCompletion }} %)</div>
           </div>
 
           <!-- Header of Study List -->
@@ -196,16 +196,16 @@
       <ion-list *ngSwitchCase="'oldtestament'">
           <div class="chart-content">
             <div class="canvas-content">
-              <canvas baseChart width="950" height="200%"
+              <canvas baseChart width="2000" height="200%"
                   [chartType]="ebBarChartType"
-                  [legend]="ebBarChartLegend"
                   [colors]="ebBarChartColors"
+                  [legend]="ebBarChartLegend"
 
-                  [datasets]="obBarChartDataSet"
                   [labels]="obBarChartLabels"
+                  [datasets]="obBarChartDataSet"
                   [options]="obBarChartOptions"
-                  (chartHover)="chartHovered($event)"
-                  (chartClick)="chartClicked($event)">
+                  (chartHover)="chartHoveredForOB($event)"
+                  (chartClick)="chartClickedForOB($event)">
               </canvas>
             </div>
           </div>
@@ -215,9 +215,9 @@
         <!-- GROUP C : book content, table list -->
         <div id="entirebook-col1-row3">
           <div class="table-study-header-list" padding>
-            <div class="bible-testament">NEW TESTAMENT</div>
-            <div class="bible-title"><strong>The First Book of Moses Called Genesis</strong></div>
-            <div class="div-study-status-detail">50 Studies * 4 Completed (25%)</div>
+            <div class="bible-testament">OLD TESTAMENT</div>
+            <div class="bible-title"><strong>{{ bibleTitleBookOT }}</strong></div>
+            <div class="div-study-status-detail">{{ totalStudies }} Studies * {{ completeStudies }} Completed ({{ percentageCompletion }} %)</div>
           </div>
 
           <!-- Header of Study List -->
@@ -347,15 +347,16 @@
         
           <div class="chart-content">
               <div class="canvas-content">
-                <canvas baseChart width="950" height="200%"
+                <canvas baseChart width="1500" height="200%"
                     [chartType]="ebBarChartType"
-                    [datasets]="ebBarChartDataSet"
-                    [labels]="ebBarChartLabels"
-                    [legend]="ebBarChartLegend"
-                    [options]="ebBarChartOptions"
                     [colors]="ebBarChartColors"
-                    (chartHover)="chartHovered($event)"
-                    (chartClick)="chartClicked($event)">
+                    [legend]="ebBarChartLegend"
+
+                    [labels]="ntBarChartLabels"
+                    [datasets]="ntBarChartDataSet"
+                    [options]="ntBarChartOptions"
+                    (chartHover)="chartHoveredForNT($event)"
+                    (chartClick)="chartClickedForNT($event)">
                 </canvas>
               </div>
             </div>
@@ -366,8 +367,8 @@
           <div id="entirebook-col1-row3">
             <div class="table-study-header-list" padding>
               <div class="bible-testament">NEW TESTAMENT</div>
-              <div class="bible-title"><strong>The Gospel According to Matthew</strong></div>
-              <div class="div-study-status-detail">50 Studies * 4 Completed (25%)</div>
+              <div class="bible-title"><strong>{{ bibleTitleBookNT }}</strong></div>
+              <div class="div-study-status-detail">{{ totalStudies }} Studies * {{ completeStudies }} Completed ({{ percentageCompletion }} %)</div>
             </div>
   
             <!-- Header of Study List -->

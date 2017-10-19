@@ -21,7 +21,6 @@ import { SettingsPage } from '../pages/settings/settings';
 import { StatusBar } from '@ionic-native/status-bar';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { SignaturePadModule } from 'angular2-signaturepad';
 import { ChartsModule } from 'ng2-charts';
 
 // Provider
