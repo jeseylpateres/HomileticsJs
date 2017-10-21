@@ -24,7 +24,7 @@ export class HomePage {
 
 
   constructor(public navCtrl: NavController, public app: App) {
-      this.book = new Book();
+      //this.book = new Book();
   }
 
   menu(){
