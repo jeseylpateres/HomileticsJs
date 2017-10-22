@@ -10,11 +10,12 @@ import { SignupPage } from '../pages/signup/signup';
 import { ForgotpasswordPage } from '../pages/forgotpassword/forgotpassword';
 import { MenuPage } from '../pages/menu/menu';
 import { OnboardingPage } from '../pages/onboarding/onboarding';
+import { StudyInputPage } from '../pages/study-input/study-input';
+
 
 // Main Pages
 import { HomePage } from '../pages/home/home';
 import { HistoryPage } from '../pages/history/history';
-import { ProfilePage } from '../pages/profile/profile';
 import { SettingsPage } from '../pages/settings/settings';
 
 // Others
@@ -30,8 +31,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
   declarations: [
     MyApp,
     HomePage,
+    StudyInputPage,
     HistoryPage,
-    ProfilePage,
     SettingsPage,
     LoginPage,
     SignupPage,
@@ -48,10 +49,10 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HistoryPage,
-    ProfilePage,
-    SettingsPage,
     HomePage,
+    StudyInputPage,
+    HistoryPage,
+    SettingsPage,
     LoginPage,
     SignupPage,
     ForgotpasswordPage,

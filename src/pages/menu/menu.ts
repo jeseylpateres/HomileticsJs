@@ -10,6 +10,8 @@ import { HomePage } from '../home/home';
 })
 export class MenuPage {
 
+  pages : any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -17,7 +19,7 @@ export class MenuPage {
     this.navCtrl.push(HomePage);
   }
 
-  logout(){
+  login(){
     this.navCtrl.push(LoginPage);
   }
 

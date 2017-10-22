@@ -16,11 +16,11 @@ export class MyApp {
     , statusBar: StatusBar
     , splashScreen: SplashScreen) {
 
-    platform.ready().then(() => {
-      statusBar.styleDefault();
-      //splashScreen.hide();
-      splashScreen.show();
-    });
+      platform.ready().then(() => {
+        statusBar.styleDefault();
+        //splashScreen.hide();
+        splashScreen.show();
+      });
 
   }
 }

@@ -2,7 +2,8 @@
 var express = require('express');
 var app = express(); 						    // create our server w/ express
 var mongoose = require('mongoose'); 				// mongoose for mongodb
-var port = process.env.PORT || 8080; 				// set the port
+//var port = process.env.PORT || 8080; 				// set the port
+var port = process.env.PORT || 5000;
 var database = require('./server_config/database'); // load the database config
 var morgan = require('morgan');                     // log requests to the console (express4)
 var bodyParser = require('body-parser');            // pull information from HTML POST (express4)
@@ -12,6 +13,7 @@ var cors = require('cors');
 // configuration ===============================================================
 mongoose.connect(database.localUrl); 	                // Connect to local MongoDB instance. A remoteUrl is also available (modulus.io)
 
+app.use(express.static('./www')); 		// set the static files location /public/img will be /img for users
 app.use(morgan('dev'));                                 // log every request to the console
 app.use(bodyParser.urlencoded({'extended': 'true'}));   // parse application/x-www-form-urlencoded
 app.use(bodyParser.json());                             // parse application/json

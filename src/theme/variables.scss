@@ -57,6 +57,18 @@ $colors: (
 
 $toolbar-background: color($colors, primary);
 
+.tabs-md .tab-button {
+  color: #1ebe67 !important;
+ }
+
+ .tabs-md .tab-button[aria-selected=true] {
+   color: #1ebe67 !important;
+ }
+
+.tabIcon {
+  color: #1ebe67 !important;
+}
+
 
 // App iOS Variables
 // --------------------------------------------------

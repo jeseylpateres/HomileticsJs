@@ -4,5 +4,9 @@
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
-  }
+  },
+  "description": "Dev",
+  "repository": "https://github.com/jeseylpateres/homiletics.git",
+  "logo": "https://github.com/jeseylpateres/homiletics/blob/master/src/assets/imgs/logo.png",
+  "keywords": ["ionic2", "heroku", "pereless360"]
 }
