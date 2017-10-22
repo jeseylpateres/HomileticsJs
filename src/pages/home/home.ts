@@ -243,8 +243,8 @@ export class HomePage extends BibleDataService {
       label: 'Complete Study',
       data: [
         5, 10, 2, 20, 0, 0, 0, 0, 0, 3, 
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0
+        0, 0, 0, 0, 0, 0, 0, 0, 11, 0,
+        0, 0, 0, 0, 0, 0, 10
       ]
     },
     {
